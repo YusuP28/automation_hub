@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:flutter/services.dart';
 
 void main() {
   runApp(const AutomationHub());
 }
 
 class AutomationHub extends StatelessWidget {
-  const AutomationHub({Key? key}) : super(key: key);
+  const AutomationHub({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +23,10 @@ class AutomationHub extends StatelessWidget {
 }
 
 class AutomationHomePage extends StatefulWidget {
-  const AutomationHomePage({Key? key}) : super(key: key);
+  const AutomationHomePage({super.key});
 
   @override
-  _AutomationHomePageState createState() => _AutomationHomePageState();
+  State<AutomationHomePage> createState() => _AutomationHomePageState();
 }
 
 class _AutomationHomePageState extends State<AutomationHomePage> {
@@ -59,12 +58,12 @@ class _AutomationHomePageState extends State<AutomationHomePage> {
         });
       } else {
         setState(() {
-          errorMessage = 'Failed to load tasks: \${response.statusCode}';
+          errorMessage = 'Failed to load tasks: ${response.statusCode}';
         });
       }
     } catch (e) {
       setState(() {
-        errorMessage = 'Error loading tasks: \${e.toString()}';
+          errorMessage = 'Error loading tasks: ${e.toString()}';
       });
     } finally {
       setState(() {
@@ -80,7 +79,7 @@ class _AutomationHomePageState extends State<AutomationHomePage> {
 
     try {
       final taskData = {
-        'name': 'New \${taskType} Task',
+        'name': 'New $taskType Task',
         'type': taskType,
         'schedule': 'immediate',
         'parameters': {},
@@ -101,7 +100,7 @@ class _AutomationHomePageState extends State<AutomationHomePage> {
       }
     } catch (e) {
       setState(() {
-        errorMessage = 'Error creating task: \${e.toString()}';
+          errorMessage = 'Error creating task: ${e.toString()}';
       });
     } finally {
       setState(() {
@@ -159,7 +158,7 @@ class _AutomationHomePageState extends State<AutomationHomePage> {
                         color: _getTaskColor(task['type']),
                       ),
                       title: Text(task['name']),
-                      subtitle: Text('ID: \${task['id']}'),
+                      subtitle: Text('ID: ${task['id']}'),
                       trailing: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                         decoration: BoxDecoration(

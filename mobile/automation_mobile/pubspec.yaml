@@ -10,25 +10,11 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # State management
-  provider: ^6.1.2
-
   # HTTP client for API calls
   http: ^1.2.1
 
-  # Local storage
-  shared_preferences: ^2.3.2
-
   # UI
   cupertino_icons: ^1.0.6
-  flutter_spinkit: ^5.1.0
-  intl: any
-
-  # QR code scanning (optional)
-  qr_flutter: ^4.1.0
-
-  # Local notifications
-  flutter_local_notifications: ^19.0.0
 
 dev_dependencies:
   flutter_test:
@@ -37,36 +23,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  assets:
-    - assets/icons/
-    - assets/images/
-    - assets/animations/
-  
-  fonts:
-    - family: AutomationIcons
-      fonts:
-        - asset: fonts/automation_icons.ttf
-
-  # Packages configuration
-  packages:
-    - automation_mobile
-
-platforms:
-  android:
-  ios:
-  web:
-  macos:
-  windows:
-
-# Flutter analysis options
-analyzer:
-  strong-mode: true
-  errors:
-    unused_import: warning
-    unused_local_variable: warning
-    unused_field: warning
-
-# Flutter tool configuration
-tool:
-  flutter:
-    min_version: 3.19.6
